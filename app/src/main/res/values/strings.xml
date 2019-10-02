@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">To Do List</string>
+    <string name="error_read_file">Unable to read local file</string>
+    <string name="error_write_file">Unable to update local file</string>
 </resources>
