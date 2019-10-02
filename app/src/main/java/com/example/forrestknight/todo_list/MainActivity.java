@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.apache.commons.io.FileUtils;
 
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             items = new ArrayList<String>(FileUtils.readLines(todoFile));
         } catch (IOException e) {
+            Toast.makeText(getApplicationContext(), getString(R.string.error_read_file), Toast.LENGTH_LONG).show();
             items = new ArrayList<String>();
         }
     }
@@ -77,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             FileUtils.writeLines(todoFile, items);
         } catch (IOException e) {
+            Toast.makeText(getApplicationContext(), getString(R.string.error_write_file), Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
     }
